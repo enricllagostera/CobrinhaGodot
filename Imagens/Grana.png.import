@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Caveira1.png-1ca99d11ec7912874ffc9a992fe3d59c.stex"
+path="res://.import/Grana.png-6aa63e78914838a2bdbd8685a0a2485d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Caveira1.png"
-dest_files=[ "res://.import/Caveira1.png-1ca99d11ec7912874ffc9a992fe3d59c.stex" ]
+source_file="res://Imagens/Grana.png"
+dest_files=[ "res://.import/Grana.png-6aa63e78914838a2bdbd8685a0a2485d.stex" ]
 
 [params]
 
