@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Caveira1.png" type="Texture" id=1]
+[ext_resource path="res://Caveira2.png" type="Texture" id=2]
+[ext_resource path="res://Caveira.gd" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 12.5259
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "Andando",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "Parada",
+"speed": 5.0
+} ]
+
+[node name="Caveira" type="RigidBody2D"]
+modulate = Color( 1, 0.25098, 0.0784314, 1 )
+position = Vector2( 313, 229 )
+gravity_scale = 0.0
+script = ExtResource( 3 )
+distancia_seguir = 35
+
+[node name="Colisor" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Visual" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "Parada"
+playing = true

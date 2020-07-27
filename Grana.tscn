@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Grana.png" type="Texture" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 13.1453
+
+[node name="Grana" type="RigidBody2D"]
+mass = 0.01
+gravity_scale = 0.7
+angular_velocity = 10.0
+angular_damp = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Colisor" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
