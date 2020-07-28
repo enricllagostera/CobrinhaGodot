@@ -14,11 +14,12 @@ func atualizarAnimacao(movimento, tolerancia):
 		$Visual.play("Andando")
 	else :
 		$Visual.play("Parada")
-	if alvo != null:
-		$Visual.look_at(alvo.position)
-	else:
-		$Visual.look_at(position + movimento)
-	$Visual.rotation_degrees += -90
+	if Engine.time_scale >= 0.9:
+		if alvo != null:
+			$Visual.look_at(alvo.position)
+		else:
+			$Visual.look_at(position + movimento)
+		$Visual.rotation_degrees += -90
 	pass
 
 
