@@ -3,17 +3,22 @@
 [ext_resource path="res://Scripts/DispersorGrana.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Jogador.gd" type="Script" id=2]
 [ext_resource path="res://Caveira.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Imagens/Fundo.png" type="Texture" id=4]
+[ext_resource path="res://Imagens/FundoCircular.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 151.211, 10 )
 
 [node name="FaseTeste" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [ 153.2 ],
+"_edit_vertical_guides_": [ 191.545 ]
+}
 
 [node name="Jogador" type="Node2D" parent="."]
 script = ExtResource( 2 )
 tolerancia = 0.3
-velocidade = 120
+velocidade = 110
+raio_borda = 170
 velocidade_rotacao = 4
 
 [node name="Caveira" parent="Jogador" instance=ExtResource( 3 )]

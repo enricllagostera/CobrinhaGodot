@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Caveira1.png-4cdd03a8eab148d64999d95ed6136e73.stex"
+path="res://.import/FundoCircular.png-da6d0b951a049cd2e3fdfe22d1418ee3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imagens/Caveira1.png"
-dest_files=[ "res://.import/Caveira1.png-4cdd03a8eab148d64999d95ed6136e73.stex" ]
+source_file="res://Imagens/FundoCircular.png"
+dest_files=[ "res://.import/FundoCircular.png-da6d0b951a049cd2e3fdfe22d1418ee3.stex" ]
 
 [params]
 
@@ -31,4 +31,4 @@ process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true
-svg/scale=8.0
+svg/scale=1.0

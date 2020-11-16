@@ -7,6 +7,7 @@ export var tolerancia = 0.5
 export var velocidade = 50
 export var inercia = 10
 export var mudanca = 1
+export var raio_borda = 100
 
 export var velocidade_rotacao = 2
 export var incremento_velocidade = 5
@@ -31,6 +32,7 @@ func destruir_parte():
 
 
 func _ready():
+	Engine.time_scale = 1
 	deslocamento_atual = Vector2(0, 1)
 	caveiras.append($Caveira)
 	$Caveira/Visual.scale = Vector2.ONE * 1.3
@@ -39,7 +41,7 @@ func _ready():
 
 func _input(event):
 	if !OS.window_fullscreen:
-			OS.window_fullscreen = true
+		OS.window_fullscreen = true
 	
 	if event is InputEventJoypadMotion:
 		if !OS.window_fullscreen:
@@ -61,8 +63,8 @@ func _input(event):
 		direcao = direcao.clamped(1)
 	
 	if Input.is_action_pressed("ui_cancel"):
-		Engine.time_scale = 1
 		get_tree().reload_current_scene()
+		
 	
 	if event is InputEventJoypadButton:
 		if !OS.window_fullscreen:
@@ -78,10 +80,11 @@ func _physics_process(delta):
 	if(direcao.length() > tolerancia):
 		deslocamento_combinado = deslocamento_atual.normalized() * inercia + direcao.clamped(1) * mudanca
 	var deslocamento_desejado = deslocamento_combinado.clamped(1) * velocidade * delta
-#	deslocamento_desejado = deslocamento_desejado.rotated(deg2rad(direcao.x * velocidade_rotacao))
-	caveiras[0].position += deslocamento_desejado
 	deslocamento_atual = deslocamento_desejado
+	caveiras[0].position += deslocamento_atual
 	caveiras[0].atualizarAnimacao(deslocamento_atual, tolerancia)
+	if caveiras[0].position.distance_to(Vector2(190, 153)) > raio_borda:
+		Engine.time_scale = 0.001
 	pass
 
 
